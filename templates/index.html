@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#090a0f"><title>Darkwave — Music Player</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><div class="app">
+<header><div class="logo">D</div><div><b>DARKWAVE</b><small>your night, your sound</small></div><span class="online">● ONLINE</span></header>
+<section class="hero"><p class="eyebrow">A PERSONAL MUSIC SPACE</p><h1>Find your<br><span>frequency.</span></h1>
+<p class="intro">Cari lagu, dengarkan preview resmi, dan simpan favorit lu ke playlist pribadi di perangkat ini.</p>
+<form id="search-form"><input id="query" placeholder="Cari lagu atau artis..." autocomplete="off" required><button>CARI</button></form>
+<p class="hint">Pencarian iTunes · Preview audio biasanya sekitar 30 detik</p></section>
+<section class="section"><p class="eyebrow">DISCOVER</p><h2 id="list-title">Mulai pencarian</h2><p id="message">Ketik judul lagu atau nama artis di kolom pencarian.</p><div id="results" class="tracks"></div></section>
+<section class="section"><p class="eyebrow">YOUR COLLECTION</p><h2>Playlist lu <button id="clear">HAPUS SEMUA</button></h2><div id="playlist" class="tracks"></div><p id="empty">Belum ada lagu. Tambahkan lagu dari hasil pencarian.</p></section>
+</div>
+<footer><div class="now"><img id="art" alt=""><div><b id="title">Belum ada lagu</b><small id="artist">Pilih lagu untuk mulai</small></div></div>
+<div class="controls"><div class="buttons"><button id="prev">|◀</button><button id="play" class="play">▶</button><button id="next">▶|</button></div><div class="timeline"><span id="time">0:00</span><input id="progress" type="range" min="0" max="30" value="0"><span id="duration">0:30</span></div></div>
+<div class="vol">VOL <input id="volume" type="range" min="0" max="1" step=".05" value=".8"></div></footer>
+<audio id="audio"></audio><script src="{{ url_for('static', filename='app.js') }}"></script></body></html>
